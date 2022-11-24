@@ -1,0 +1,24 @@
+<h1>User Info</h1>
+<h4>name</h4>
+<p><%= @user.name %></p>
+<h4>introduction</h4>
+
+<h1>New Book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<h1>Books</h1>
+<% @books.each do |book| %>
+<p>Title</p>
+<p>Opinion</p>
+<%= link_to book.title, book_path(book.id) %>
+<p><%= book.body %></p>
+<% end %>
