@@ -52,9 +52,9 @@ group :test do
  gem 'faker'
   #gem 'capybara', '>= 3.26'
   #gem 'selenium-webdriver', '>= 4.0.0.rc1'
-  
+
   # Easy installation and use of web drivers to run system tests with browsers
-  
+
   #gem 'webdrivers'
 end
 

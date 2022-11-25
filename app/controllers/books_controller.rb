@@ -10,7 +10,7 @@ before_action :correct_user, only: [:edit, :update]
   @book = Book.new(book_params)
   @book.user_id = current_user.id
   if @book.save
-   flash[:notice] = "Book was successfully created"
+   flash[:notice] = "You have updated book successfully."
    redirect_to book_path(@book.id)
   else
    @books = Book.all
@@ -35,7 +35,7 @@ before_action :correct_user, only: [:edit, :update]
   @book.update(book_params)
   #redirect_to book_path(@book.id)
  if @book.save
-   flash[:notice] = "Book was successfully created"
+   flash[:notice] = "You have updated book successfully."
    redirect_to book_path(@book.id)
   else
    @books = Book.all
@@ -52,7 +52,7 @@ before_action :correct_user, only: [:edit, :update]
 
  private
  def book_params
- params.require(:book).permit(:title,:body)
+ params.require(:book).permit(:title,:body,:image)
  end
 
  def correct_user
