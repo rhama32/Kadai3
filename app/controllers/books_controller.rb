@@ -12,6 +12,7 @@ before_action :correct_user, only: [:edit, :update]
   if @book.save
    flash[:notice] = "You have created book successfully."
    redirect_to book_path(@book.id)
+   flash[:notice] = "successfully"
   else
    @books = Book.all
    flash[:alret] = "Error"
@@ -22,7 +23,7 @@ before_action :correct_user, only: [:edit, :update]
  def show
   @book = Book.find(params[:id])
   @books = Book.all
-  @user = current_user
+  @user = @book.user
   @book_new = Book.new
  end
 
@@ -38,6 +39,7 @@ before_action :correct_user, only: [:edit, :update]
    if @book.save
    flash[:notice] = "You have updated book successfully."
    redirect_to book_path(@book.id)
+   flash[:notice] = "successfully"
    else
    @books = Book.all
    flash[:alret] = "Error"
