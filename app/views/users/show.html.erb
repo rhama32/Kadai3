@@ -1,24 +1,51 @@
-<h1>User Info</h1>
-<h4>name</h4>
-<p><%= @user.name %></p>
-<h4>introduction</h4>
 
-<h1>New Book</h1>
-<!-- form_with部分 -->
-<%= form_with model: @book do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+<div class="container px-5 px-sm-0">
+ <div class="row">
+  <div class="col-md-3">
+   <h2>User Info</h2>
+   <%= image_tag @user.get_profile_image(100,100) %>
+   <table class="table">
+    <th>name</th>
+     <th><%= @user.name %></th>
+    <th>introduction</th>
+     <th><%= @user.introduction %></th>
+     <%= link_to "Edit", edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block"%>
+   </table>
+    <div class="row">
 
-  <h4>Opinion</h4>
-  <%= f.text_area :body %>
+    </div>
+    <h2>New Book</h2>
+    <%= form_with model: @book do |f| %>
+    <div class="form-group">
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+    </div>
+    <div class="form-group">
+    <h4>Opinion</h4>
+    <%= f.text_area :body %>
+    </div>
+    <div class="form-group">
+    <%= f.submit 'Create Book', class: "btn btn-success" %>
+    <% end %>
+    </div>
+   </div>
+   <div class="col-md-8 offset-md-1">
+   <h2>Books</h2>
+   <% @books.each do |book| %>
+   <th>Title</th>
+   <th>Opinion</th>
+   <%= link_to book.title, book_path(book.id) %>
+   <p><%= book.body %></p>
+   <th colspan="3"></th>
+   <% end %>
+  </div>
+ </div>
+</div>
 
-  <%= f.submit 'Create Book' %>
-<% end %>
-
-<h1>Books</h1>
-<% @books.each do |book| %>
-<p>Title</p>
-<p>Opinion</p>
-<%= link_to book.title, book_path(book.id) %>
-<p><%= book.body %></p>
-<% end %>
+  <div class="container mt-5">
+   <div class="row">
+    <div class="mx-auto">
+     <p>CopyRight Infratop.inc</p>
+    </div>
+   </div>
+  </div>
