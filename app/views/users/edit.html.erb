@@ -20,8 +20,9 @@
          </div>
          <%= f.text_field :name %>
          <div class="form-group">
-         <label for="user_image">Image</label>
+          <label for="user_image">Image</label>
          </div>
+         <%= f.file_field :profile_image, accept: "image/*" %>
 
          <div class="form-group">
          <label for="user_introduction">Introduction</label>
