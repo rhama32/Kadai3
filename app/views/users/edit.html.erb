@@ -8,11 +8,41 @@
   </ul>
 <% end %>
 
-<h1>User info</h1>
+        <main>
+        <p id="notice"></p>
+        <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h2>User info</h2>
+        <%= form_with model: @user do |f| %>
+        <div class="form-group">
+        <label for="user_name">Name</label>
+         </div>
+         <%= f.text_field :name %>
+         <div class="form-group">
+         <label for="user_image">Image</label>
+         </div>
 
-   <%= form_with model: @user do |f| %>
-   <h4>Name</h4>
-   <%= f.text_field :name %>
-   <%= f.text_area :introduction %>
-   <%= f.submit 'Update User' %>
-   <% end %>
+         <div class="form-group">
+         <label for="user_introduction">Introduction</label>
+         </div>
+          <%= f.text_area :introduction %>
+         <div class="form-group">
+          <%= f.submit 'Update User' , class: "btn btn-secondary" %>
+          <% end %>
+         </div>
+        </div>
+       </div>
+      </div>
+    </main>
+
+
+ <footer>
+  <div class="container mt-5">
+   <div class="row">
+    <div class="mx-auto">
+    <p>CopyRight Infratop.inc</p>
+    </div>
+   </div>
+  </div>
+ </footer>
