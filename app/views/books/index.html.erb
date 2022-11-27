@@ -28,7 +28,7 @@
     </tbody>
    </table>
 
-    <div class="row">
+    <div>
      <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
      <i class= "fas fa-user-cog"></i>
      <% end %>
@@ -46,13 +46,14 @@
     <div class="form-group">
     <div class="col-md-8 offset-md-1">
     <%= f.submit 'Create Book', class: "btn btn-success" %>
+    </div>
+    </div>
     <% end %>
     </div>
-   </div>
 
 
 
-<div class="col-md-8 offset-md-1"></div>
+<div class="col-md-8 offset-md-1">
 <h2>Books</h2>
 <table class="table table-hover table-inverse">
  <thead>
@@ -81,4 +82,9 @@
 <% end %>
 </tbody>
 </table>
+</div>
+
+</div>
+</div>
+</main>
 
