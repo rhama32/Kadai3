@@ -11,11 +11,11 @@
       <th><%= @user.introduction %></th>
 
        <div class="row">
-      <%= link_to edit_user_path(@user.id), class: "btn btn-outline-secondary btn-block" do %>
+      <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
       <i class= "fas fa-user-cog"></i>
      <% end %>
      </div>
-     
+
       <h1>New book</h1>
       <!-- form_with部分 -->
       <%= form_with model: Book.new do |f| %>
