@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   get "home/about" => "homes#about", as: "about"
   resources :users, only: [:show, :edit, :index, :update]
   resources :books, only: [:show, :edit, :index, :update, :new, :create, :destroy]
+
+  devise_scope :user do
+   post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 end

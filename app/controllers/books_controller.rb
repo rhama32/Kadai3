@@ -51,6 +51,7 @@ before_action :correct_user, only: [:edit, :update]
   @book = Book.find(params[:id])
   if @book.destroy
   redirect_to books_path
+  flash[:notice] = "successfully"
   end
  end
 
